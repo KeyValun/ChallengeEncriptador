@@ -39,7 +39,7 @@ function desencriptar(stringDesncriptada){
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]]
     stringDesncriptada = stringDesncriptada.toLowerCase()
 
-    for(i = 0; i < matrizCodigo.length; i++){
+    for( let i = 0; i < matrizCodigo.length; i++){
         if(stringDesncriptada.includes(matrizCodigo[i][1])){
             stringDesncriptada = stringDesncriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0])
 
@@ -47,4 +47,11 @@ function desencriptar(stringDesncriptada){
 
     }
     return stringDesncriptada
+
+    function copiarAlPortapapeles() {
+        let textoEncriptado = document.getElementById("mensaje");
+        textoEncriptado.select();
+        textoEncriptado.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+    }
 }
