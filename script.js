@@ -52,6 +52,6 @@ function desencriptar(stringDesncriptada){
         let textoEncriptado = document.getElementById("mensaje");
         textoEncriptado.select();
         textoEncriptado.setSelectionRange(0, 99999);
-        document.execCommand("copy");
+        document.execCommand("copiar");
     }
 }
