@@ -1,5 +1,6 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
+const image = document.querySelector(".logo")
 
 /*La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
@@ -13,6 +14,7 @@ function btnEncriptar(){
     mensaje.value = textoEncriptado
     textArea.value = "";
     mensaje.style.backgroundImage = "none"
+    mensaje.style.backgroundColor = "rgba(19,25,59,255)"
 }
 
 function encriptar(stringEncriptada){
@@ -33,6 +35,8 @@ function btnDesencriptar(){
     const textoDesncriptado = desencriptar(textArea.value)
     mensaje.value = textoDesncriptado
     textArea.value = "";
+    mensaje.style.backgroundImage = "none"
+    mensaje.style.backgroundColor = "rgba(19,25,59,255)"
 }
 
 function desencriptar(stringDesncriptada){
@@ -48,10 +52,17 @@ function desencriptar(stringDesncriptada){
     }
     return stringDesncriptada
 
-    function copiarAlPortapapeles() {
-        let textoEncriptado = document.getElementById("mensaje");
-        textoEncriptado.select();
-        textoEncriptado.setSelectionRange(0, 99999);
-        document.execCommand("copiar");
-    }
+}
+
+function copiarAlPortapapeles() {
+    var texto = document.querySelector(".mensaje").value;
+    var elementoTemporal = document.createElement("textarea");
+    elementoTemporal.value = texto;
+    document.body.appendChild(elementoTemporal);
+    elementoTemporal.select();
+    document.execCommand("copy");
+    mensaje.value = "";
+    mensaje.style.backgroundImage = "";
+    document.body.removeChild(elementoTemporal);
+
 }
