@@ -6,7 +6,7 @@
 
 *{  
     background-image: url(imagenes/cyberpunk-wallpaper-hd.jpg); 
-    background-size: 100%;
+    background-size: auto;
     background-attachment:fixed;
     background-repeat: no-repeat;
     font-family: 'Inter';
@@ -142,4 +142,31 @@ main{
         .información{
             color: #c0c0c0;
             font-size: 12px;
+        }
+
+        @media screen and (max-width: 480px){
+            main{
+                width: fit-content;
+            }
+            
+            *{
+                position:static;
+                width: auto;
+                align-items: center;
+            }
+
+            .logo{
+                width: 20%;
+            }
+            .text-area{
+                width: 80%;
+            }
+
+            .botones, .btn-encriptar, .btn-desencriptar{
+                width: auto;
+            }
+
+            .mensaje{
+                width: auto;
+            }
         }
